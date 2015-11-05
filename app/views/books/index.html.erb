@@ -1,0 +1,10 @@
+<h1>Book List</h1>
+<% @books.each do |b| %>
+<div>
+<h2><%= b.title %></h2>
+<a href="/books/<%= b.id %>">
+<%= image_tag b.book_img.url(:book_index) %>
+</a>
+<p><%= truncate(b.description, length: 55) {link_to "seguir leyendo", b} %></p>
+<% end %>
+</div>
